@@ -1,12 +1,31 @@
 <resources>
-    <string name="app_name">final_appwork</string>
+    <string name="app_name">Memo</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="title">Title</string>
+    <string name="detail">Detail</string>
+    <string name="time">Time</string>
+    <string name="label_id">账号</string>
+    <string name="content_id">请输入手机号</string>
+    <string name="label_name">昵称</string>
+    <string name="content_name">请输入昵称</string>
+    <string name="label_pwd1">密码</string>
+    <string name="content_pwd1">请输入密码</string>
+    <string name="label_pwd2">确认密码</string>
+    <string name="content_pwd2">请确认密码</string>
+    <string name="btn_login">登录</string>
+    <string name="btn_register">注册</string>
+    <string name="btn_return">返回</string>
+    <string name="btn_add">新建</string>
+    <string name="label_title">标题</string>
+    <string name="text_title">请输入标题</string>
+    <string name="text_content">请输入内容</string>
+    <string name="btn_save">保存</string>
+    <string name="label_first">第一个页面</string>
+    <string name="label_second">第二个页面</string>
+    <string name="label_third">第三个页面</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
