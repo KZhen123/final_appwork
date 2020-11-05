@@ -6,16 +6,18 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "memo.db";
-    public static final String TB_NAME1 = "tb_study";
-    public static final String TB_NAME2 = "tb_life";
-    public static final String TB_NAME3 = "tb_users";
+    public static final String TB_NAME1 = "memo1";
+    public static final String TB_NAME2 = "memo2";
+    public static final String TB_NAME3 = "memo3";
 
     private static final int VERSION = 1;
     //建三个表，用户、学习、生活
-    public static final String create1 = "CREATE TABLE " + TB_NAME1 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "USERID text," + "TITLE text," + "TIME text," + "BODY text)";
-    public static final String create2 = "CREATE TABLE " + TB_NAME2 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "USERID text," + "TITLE text," + "TIME text," + "BODY text)";
-    public static final String create3 = "CREATE TABLE " + TB_NAME3 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "USERID text," + "NAME text," + "PWD text)";
-
+    //public static final String create1 = "CREATE TABLE " + TB_NAME1 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "USERID text," + "TITLE text," + "TIME text," + "BODY text)";
+    //public static final String create2 = "CREATE TABLE " + TB_NAME2 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "USERID text," + "TITLE text," + "TIME text," + "BODY text)";
+    //public static final String create3 = "CREATE TABLE " + TB_NAME3 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "USERID text," + "NAME text," + "PWD text)";
+    public static final String create1 = "CREATE TABLE " + TB_NAME1 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "TITLE text," + "TIME text," + "BODY text)";
+    public static final String create2 = "CREATE TABLE " + TB_NAME2 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "TITLE text," + "TIME text," + "BODY text)";
+    public static final String create3 = "CREATE TABLE " + TB_NAME3 + "(" + "ID INTEGER PRIMARY KEY AUTOINCREMENT," + "STATE text," + "BODY text)";
     public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
