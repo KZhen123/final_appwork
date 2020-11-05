@@ -56,9 +56,9 @@ public class DBManager {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = null;
         if (cate == 1) {
-            cursor = db.query(TBNAME1, null, null, null, null, null, null);
+            cursor = db.query(TBNAME1, null, null, null, null, null, "TIME desc");
         } else if (cate == 2) {
-            cursor = db.query(TBNAME2, null, null, null, null, null, null);
+            cursor = db.query(TBNAME2, null, null, null, null, null, "TIME desc");
         }
         if (cursor != null) {
             memoList = new ArrayList<MemoItem>();
@@ -82,14 +82,14 @@ public class DBManager {
     public List<TodoItem> list_todo() {
         List<TodoItem> todoList = null;
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.query(TBNAME3, null, null, null, null, null, null);
+        Cursor cursor = db.query(TBNAME3, null, null, null, null, null, "STATE");
         if (cursor != null) {
             todoList = new ArrayList<TodoItem>();
             while (cursor.moveToNext()) {
                 TodoItem item = new TodoItem();
                 item.setId(cursor.getInt(cursor.getColumnIndex("ID")));
                 item.setState(cursor.getString(cursor.getColumnIndex("STATE")));
-                Log.i(TAG,"STATE"+cursor.getString(cursor.getColumnIndex("STATE")));
+                //Log.i(TAG,"STATE"+cursor.getString(cursor.getColumnIndex("STATE")));
                 item.setBody(cursor.getString(cursor.getColumnIndex("BODY")));
                 todoList.add(item);
             }
@@ -112,6 +112,7 @@ public class DBManager {
             db.delete(TBNAME3, "ID=?", new String[]{String.valueOf(id)});
         db.close();
     }
+
 
     //更新备忘录信息,cate=1为学习，cate=2为生活
     public void update_memo(int cate, MemoItem memoItem) {
@@ -154,9 +155,11 @@ public class DBManager {
         ContentValues values=new ContentValues();
         //改变状态
         if(todoitem.getState().equals("0")){
-            values.put("STATE",1);
+            values.put("STATE","1");
+            Log.i(TAG,"state="+0);
         }else{
-            values.put("STATE",0);
+            values.put("STATE","0");
+            Log.i(TAG,"state="+1);
         }
         db.update(TBNAME3, values, "ID=?", new String[]{String.valueOf(todoitem.getId())});
     }
