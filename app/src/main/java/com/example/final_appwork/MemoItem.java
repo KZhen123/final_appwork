@@ -2,22 +2,19 @@ package com.example.final_appwork;
 
 public class MemoItem {
     private int id;
-    private String userId;
     private String title;
     private String time;
     private String body;
 
     public MemoItem() {
         super();
-        userId = "";
         title = "";
         time = "";
         body = "";
     }
 
-    public MemoItem(String userId, String title, String time, String body) {
+    public MemoItem(String title, String time, String body) {
         super();
-        this.userId = userId;
         this.title = title;
         this.time = time;
         this.body = body;
@@ -29,14 +26,6 @@ public class MemoItem {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
     }
 
     public String getTitle() {
