@@ -67,7 +67,7 @@ public class SecondFragment extends Fragment {
         //listview的长按监听
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
                 Object itemAtPosition = listView.getItemAtPosition(position);
                 // HashMap<String,String> map = (HashMap<String, String>) itemAtPosition;
                 MemoItem map = (MemoItem) itemAtPosition;
@@ -80,6 +80,7 @@ public class SecondFragment extends Fragment {
                             public void onClick(DialogInterface dialog, int which) {
                                 Log.i(TAG, "onClick: 对话框事件处理");
                                 //删除数据库中该数据项
+                                myAdapter.remove(listView.getItemAtPosition(position));
                                 dbManager.delete(2, id1);
                             }
                         }).setNegativeButton("否", null);
