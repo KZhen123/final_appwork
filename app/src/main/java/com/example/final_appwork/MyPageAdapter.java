@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.PagerAdapter;
 
 public class MyPageAdapter extends FragmentPagerAdapter {
     public MyPageAdapter(FragmentManager fm){
@@ -21,6 +22,13 @@ public class MyPageAdapter extends FragmentPagerAdapter {
             return new ThirdFragment();
         }
     }
+//    public void notifyDataSetChanged() {
+//        super.notifyDataSetChanged();
+//    }
+//    @Override
+//    public int getItemPosition(@NonNull Object object) {
+//        return PagerAdapter.POSITION_NONE;
+//    }
 
     @Override
     public int getCount() {
